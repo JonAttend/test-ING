@@ -1,9 +1,9 @@
 import React from 'react';
-import img from '../assets/ing-light.png';
-import './Exercice1.css';
+//import './Exercice1.css';
 
 function Exercice1() {
-  return <div></div>;
+  return <div>404 Error
+  </div>;
 }
 
 export default Exercice1;

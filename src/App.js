@@ -2,27 +2,32 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from 'react-router-dom';
+
+// import components
+import Navbar from './components/Navbar';
+
+// import pages
+import Home from './pages/Home';
+
+
+
 import Exercice1 from './pages/Exercice1';
 import Exercice2 from './pages/Exercice2';
+
+
 import './App.css';
 
-function App() {
-  return (
+const App = () =>
+  
     <Router>
+      <Navbar />
       <Switch>
-        <Route path='/exercice1'>
-          <Exercice1 />
-        </Route>
-        <Route path='/exercice2'>
-          <Exercice2 />
-        </Route>
-        <Redirect to='/exercice1' />
+        <Route exact path='/home' element={<Home />} />
+        <Route exact path='/exercice2' element={<Exercice2 />} />
+        <Route path='/*' element={<Exercice1 />} />
       </Switch>
     </Router>
-  );
-}
 
 export default App;

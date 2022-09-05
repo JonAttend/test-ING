@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+$gutter: 1.5rem;
+$halfGutter: math.div($gutter, 2);
+
+$sizeLogo: 60px;
+
+// ING Colors
+$grey: #dbdcdd;
+$orange: #ff6200;
+$white: #ffffff;
+$violet: #525199;
+$noir: #333;
+
+// breakpoints
+$oneColum: 634px;
+$twoColum: 1024px;
