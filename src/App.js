@@ -20,9 +20,15 @@ const App = () =>
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path='/home' element={<Home />} />
-        <Route exact path='/exercice2' element={<Exercice2 />} />
-        <Route path='/*' element={<Exercice1 />} />
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/exercice2">
+          <Exercice2 />
+        </Route>
+        <Route exact path="/*">
+          <Exercice1 />
+        </Route>
       </Switch>
     </Router>
 

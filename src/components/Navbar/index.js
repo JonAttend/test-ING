@@ -10,7 +10,7 @@ import useMediaQuery from '../../hooks/UseMediaQuery';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-const Navbar = ({ summary }) => {
+const Navbar = () => {
 
     const isMobile = useMediaQuery('(max-width: 768px)');
     const [isOpen, setIsOpen] = useState(false);
@@ -52,32 +52,36 @@ const Navbar = ({ summary }) => {
                             <div className="logo"
                                 style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/logo.svg'})` }}
                                 ></div>
-                        </Link>
+                        </Link> 
                 }
                 <ul>
-                    {/* !isOpen && 
-                            <li key={`helcqqee`} className="test">
-                                <Link to={`${'menu 1'}`}><FiSearch/></Link>
+                    {   
+                        !isOpen && 
+                        !isMobile && 
+                            <li>
+                                <Link to="/search">
+                                    <FiSearch/>
+                                </Link>
                             </li>
-                    */}
-                    <li key={`hellozerf`} className={`menu m`}>
-                        <Link to={`${'menu 1'}`}>Être client</Link>
+                    }
+                    <li>
+                        <Link to="/client">Être client</Link>
                     </li>
-                    <li key={`hellofzef`} className={`menu m`}>
-                        <Link to={`${'menu 1'}`}>Vos projets</Link>
+                    <li>
+                        <Link to="/vos-projets">Vos projets</Link>
                     </li>
-                    <li key={`hellofezf`} className={`menu m`}>
-                        <Link to={`${'menu 1'}`}>Besoin d'aide ?</Link>
+                    <li>
+                        <Link to="/help">Besoin d'aide ?</Link>
                     </li>
                 </ul>
-                <div className='menu__client'>
-                    <li key={`hellotgte`} className={`menu m`}>
-                        <Link to={`${'menu 1'}`}>
+                <div className='espace__client'>
+                    <li>
+                        <Link to="/sign-in">
                             <button>Devenir client</button>
                         </Link>
                     </li>
-                    <li key={`hellogrzeget`} className={`menu m`}>
-                        <Link to={`${'menu 1'}`}>
+                    <li>
+                        <Link to="/login">
                             <button>Espace client</button>
                         </Link>
                     </li>
