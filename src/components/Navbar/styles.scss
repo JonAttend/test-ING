@@ -5,7 +5,8 @@ nav {
 	position: sticky;
 	top: 0;
 	z-index: 10;
-    
+    background-color: #fff;
+	
 	.menu-mobile {
 		text-transform: uppercase;
 		font-weight: bold;
@@ -28,9 +29,11 @@ nav {
 		}
         .logo__icon {
             padding: 15px 0; // hauteur nav
+			// mobile logo
             .logo__mobile {
                 height: 26px;
                 width: 99px;
+				margin-left: 2em;
             }
         }
         
@@ -60,12 +63,14 @@ nav {
 
             padding: 15px 0; // hauteur nav
 
+			// desktop logo
 			.logo {
 				width: 99px;
                 height: 26px;
                 aspect-ratio: auto 99 / 26;
 				background-position: center;
 				background-size: cover;
+				margin-left: 5px;
 			}
 		}
 
@@ -95,7 +100,7 @@ nav {
 
         .espace__client {
             display: flex;
-
+			transition: all ease;
             li {
                 padding: 0 5px;
                 list-style: none;

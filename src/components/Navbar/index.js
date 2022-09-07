@@ -48,10 +48,11 @@ const Navbar = () => {
             <div className='list'>
                 {
                     !isOpen &&
+                    !isMobile &&
                         <Link to="/home" className="logo__icon">
                             <div className="logo"
                                 style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/logo.svg'})` }}
-                                ></div>
+                            ></div>
                         </Link> 
                 }
                 <ul>
