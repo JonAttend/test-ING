@@ -1,6 +1,8 @@
 @use 'src/styles/vars' as v;
+@font-face {font-family: "ING Me"; src: url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.eot"); src: url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.woff") format("woff"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.svg#ING Me") format("svg"); }
 
 .container {
+    position: relative;
     height: 100vh;
     padding: 0 1em;
     display: flex;
@@ -8,12 +10,76 @@
 
     .blockLeft {
         min-width: 50%;
-        background-color: brown;
         background-size: cover;
         background-position: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .blockLeft__content {
+            position: absolute;
+            left: 46%;
+            top: 10%;
+
+            p {
+                margin: 0 0 10px 0;
+                padding: calc(16px/2*1em/1em);
+                color: #fff;
+                font-size: 1.6rem;
+                font-weight: 700;
+                font-family: "ING Me",Arial,sans-serif;
+
+                span {
+                    background-color: v.$orange;
+                    padding: calc(16px/2*1em/1em);
+                    border-radius: 8px;
+                }
+            }
+        }
     }
+
     .blockRight {
-        background-color: antiquewhite;
+
         min-width: 50%;
+        display: flex;
+        align-items: center;
+        
+        .blockRight__content {
+            width: 328px;
+            padding-left: 2em;
+
+            a { color: v.$blue;}
+        }
     }
+}
+
+@media screen and (max-width: v.$oneColum) {
+    .container {
+
+        .blockLeft, .blockRight { min-width: 100%; }
+        
+        .blockLeft {
+            .blockLeft__content {
+                left: 10%;
+                top: 18%;
+                p span { margin-right: 5px; }
+            }
+        }
+
+        .blockRight {
+            max-height: 50%;
+            align-items: center;
+
+            .blockRight__content {
+                align-items: center;
+                margin: 0 auto;
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 458px) {
+    .blockLeft__content { display: none; }
 }

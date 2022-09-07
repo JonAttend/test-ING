@@ -110,15 +110,15 @@ nav {
                     button {
                         cursor: pointer;
                         background-color: #fff;
-                        color: v.$bleu;
+                        color: v.$blue;
                         font-weight: 500;
-                        border: 1px v.$bleu solid;
+                        border: 1px v.$blue solid;
                         border-radius: 10px;
                         padding: 10px;
 
                         &:hover {
                             color: #fff;
-                            background-color: v.$bleu;
+                            background-color: v.$blue;
                         }
                     }
                 }
