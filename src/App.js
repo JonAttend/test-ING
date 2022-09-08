@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 // import pages
 import Home from './pages/Home';
 import Exercice1 from './pages/Exercice1';
-import Exercice2 from './pages/Exercice2';
+import Exercice2 from './pages/Exo2';
 
 import './App.scss';
 
