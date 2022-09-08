@@ -27,7 +27,7 @@ function Exercice2() {
     console.log('users ', users)
  }, [users]);
 
-  const gridProps = new Grid({
+  const grid = new Grid({
     data: () => {
       return users.map( user => [
         user.login, 
@@ -55,18 +55,18 @@ function Exercice2() {
         name: 'Following',
         formatter: (_, row) => html(`${row.cells[5].data.length}`) 
         // 
-      },
+      }
     ],
     pagination: {
       enabled: true,
       limit: 15
     },
-    sort: true,
+    //sort: true,
   });
 
   return users && 
     <div id='wrapper'>
-      <Grid {...gridProps.props} />;
+      <Grid {...grid.props} />
     </div>
 }
 
