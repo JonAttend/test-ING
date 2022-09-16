@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
-// import { CSSTransition } from 'react-transition-group';
 import { BiMenuAltLeft } from 'react-icons/bi';
 import { FiSearch } from 'react-icons/fi';
 import { FaUser } from 'react-icons/fa';
@@ -16,15 +14,12 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        console.log('isMobile : ', isMobile);
-
-        console.log('isOpen : ', isOpen);
         return () => null;
       }, [isMobile, isOpen]);
 
     return (
         <nav>
-            <label htmlFor="menu-mobile" className="menu-mobile" >
+            <label htmlFor="menu-mobile" className="menu-mobile">
                 <BiMenuAltLeft 
                     className={ isOpen ? 'is-open' : 'is-close' }
                     onClick={() => setIsOpen(!isOpen)}
@@ -90,10 +85,6 @@ const Navbar = () => {
             </div>
         </nav>
     )
-}
-
-Navbar.propTypes = {
-    // summary: PropTypes.array.isRequired,
 }
 
 export default Navbar;

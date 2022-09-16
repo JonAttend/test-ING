@@ -13,7 +13,7 @@ import Home from './pages/Home';
 import Exercice1 from './pages/Exercice1';
 import Exercice2 from './pages/Exo2';
 
-import './App.scss';
+//import './App.scss';
 
 const App = () =>
   

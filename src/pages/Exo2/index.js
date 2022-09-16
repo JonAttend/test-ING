@@ -13,7 +13,7 @@ function Exercice2() {
   const getApiData = async () => {
     const response = await fetch(
       API_URL
-    ).then((response) => response.json());
+    ).then((data) => data.json());
   
     // update the state
     setUsers(Object.values(response));
@@ -22,10 +22,6 @@ function Exercice2() {
   useEffect(() => {
     getApiData();
   }, []);
-
-  useEffect(() => {
-    console.log('users ', users)
- }, [users]);
 
   const grid = new Grid({
     data: () => {
@@ -49,12 +45,10 @@ function Exercice2() {
       { 
         name: 'Followers',
         formatter: (_, row) => html(`${row.cells[4].data.length}`) 
-        // 
       },
       { 
         name: 'Following',
         formatter: (_, row) => html(`${row.cells[5].data.length}`) 
-        // 
       }
     ],
     pagination: {
