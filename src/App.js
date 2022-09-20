@@ -10,10 +10,10 @@ import Navbar from './components/Navbar';
 
 // import pages
 import Home from './pages/Home';
-import Exercice1 from './pages/Exercice1';
+import Error404 from './pages/Error404';
 import Exercice2 from './pages/Exo2';
 
-//import './App.scss';
+import './App.scss';
 
 const App = () =>
   
@@ -27,7 +27,7 @@ const App = () =>
           <Exercice2 />
         </Route>
         <Route exact path="/*">
-          <Exercice1 />
+          <Error404 />
         </Route>
       </Switch>
     </Router>

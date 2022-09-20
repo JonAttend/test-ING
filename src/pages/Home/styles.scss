@@ -2,84 +2,175 @@
 @font-face {font-family: "ING Me"; src: url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.eot"); src: url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.woff") format("woff"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5724ce1882e134bfbb68a761b8e85b51.svg#ING Me") format("svg"); }
 
 .container {
-    position: relative;
-    height: 100vh;
-    padding: 0 1em;
-    display: flex;
-    flex-wrap: wrap;
+    //padding: 0 1em;
 
-    .blockLeft {
-        min-width: 50%;
-        background-size: cover;
-        background-position: center;
-
+    .section-1 {
+        position: relative;
+        padding: 0 3em;
+        height: 90vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
 
-        .blockLeft__content {
-            position: absolute;
-            left: 46%;
-            top: 10%;
+        &__blocLeft {
+            min-width: 50%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            p {
-                margin: 0 0 10px 0;
-                padding: calc(16px/2*1em/1em);
-                color: #fff;
-                font-size: 1.6rem;
-                font-weight: 700;
-                font-family: "ING Me",Arial,sans-serif;
+            &__content {
+                position: absolute;
+                left: 46%;
+                top: 10%;
 
-                span {
-                    background-color: v.$orange;
+                p {
+                    display: inline-block;
+                    margin: 0 0 10px 0;
                     padding: calc(16px/2*1em/1em);
+                    color: #fff;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    font-family: "ING Me",Arial,sans-serif;
+                    background-color: v.$orange;
                     border-radius: 8px;
+                }
+            }
+        }
+
+        &__blocRight {
+            min-width: 50%;
+            display: flex;
+            align-items: center;
+            
+            &__content {
+                width: 328px;
+                padding-left: 2em;
+                font-size: 20px;
+                
+                a { 
+                    button {
+                        background-color: v.$violet;
+                        border-radius: 5px;
+                        border: none;
+                        padding: 10px;
+                        color: #fff;
+                        cursor: pointer;
+                    }
                 }
             }
         }
     }
 
-    .blockRight {
-
-        min-width: 50%;
+    .section-2 {
+        position: relative;
+        height: 90vh;
         display: flex;
-        align-items: center;
-        
-        .blockRight__content {
-            width: 328px;
-            padding-left: 2em;
+        background-color: v.$orange;
 
-            a { color: v.$blue;}
+        &__blocLeft {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__content { 
+                
+                p {
+                    max-width: 300px;
+                    color: #fff;
+                    font-family: "ING Me",Arial,sans-serif;
+                    font-size: 38px;
+                    font-weight: 700;
+                    line-height: 68px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    padding: 1em;
+                }
+            }
+        }
+
+        &__blocRight {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__content {
+                height: 70%;
+                min-width: 70%;
+                margin-right: 10%;
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+
+            }
         }
     }
 }
 
 @media screen and (max-width: v.$oneColum) {
+    
     .container {
 
-        .blockLeft, .blockRight { min-width: 100%; }
-        
-        .blockLeft {
-            .blockLeft__content {
-                left: 10%;
-                top: 18%;
-                p span { margin-right: 5px; }
+        .section-1 {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 0;
+
+            &__blocLeft, &__blocRight { width: 100%; }
+            
+            &__blocLeft {
+                min-height: 400px;
+
+                &__content {
+                    margin-right: 20px;
+                    left: 5%;
+                    top: 30%;
+                }
+            }
+
+            &__blocRight {
+                padding: 0 1em;
+                height: 375px;
+                align-items: center;
+
+                &__content {
+                   
+                    margin: 0 auto;
+                    padding: 0;
+                }
             }
         }
 
-        .blockRight {
-            max-height: 50%;
-            align-items: center;
+        .section-2 {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 0;
 
-            .blockRight__content {
-                align-items: center;
-                margin: 0 auto;
-                padding: 0;
+            &__blocLeft, &__blocRight { width: 100%; }
+
+            &__blocLeft {
+                width: 100%;
+                min-height: 400px;
+
+                &__content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    p {
+                        font-size: 1.8em;
+                        margin: 0;
+                        padding: 0 10px;
+                        line-height: 2em;
+                    }
+                }
             }
+
+            &__blocRight {
+                display: none;
+            }
+
         }
     }
-}
-
-@media screen and (max-width: 458px) {
-    .blockLeft__content { display: none; }
 }

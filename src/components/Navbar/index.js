@@ -71,16 +71,16 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <div className='espace__client'>
-                    <li>
+                    <div>
                         <Link to="/sign-in">
                             <button>Devenir client</button>
                         </Link>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <Link to="/login">
                             <button>Espace client</button>
                         </Link>
-                    </li>
+                    </div>
                 </div>
             </div>
         </nav>
